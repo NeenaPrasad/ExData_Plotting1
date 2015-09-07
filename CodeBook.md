@@ -49,7 +49,7 @@ This script does the following:
 5. A new variable Date_Time is created in the dataframe with class **POSIXct** by combining the Date and Time columns in data frame.
 6. Processed dataframe **power_4analysis** alone is retained and all the intermediary variables are deleted
 
-####2. Plot1.R
+####2. plot1.R
 
 The script:
 
@@ -57,7 +57,7 @@ The script:
 2. plots the histogram of **_Global_active_power_** in the color *red*.
 3. Image is copied to PNG file plot1.png with dimension 480 pixels by 480 pixels.
 
-####3. Plot2.R
+####3. plot2.R
 
 The script:
 
@@ -65,7 +65,7 @@ The script:
 2. plot **_Global_active_power_** against __*Date_Time*__ 
 3. Image is copied to PNG file plot2.png with dimension 480 pixels by 480 pixels.
 
-####4. Plot3.R
+####4. plot3.R
 
 The script:
 
@@ -73,7 +73,7 @@ The script:
 2. plot **Sub_metering_1**,**Sub_metering_2** and **Sub_metering_3** against __*Date_Time*__ 
 3. Image is copied to PNG file plot3.png with dimension 480 pixels by 480 pixels.
 
-####4. Plot4.R
+####4. plot4.R
 
 The script:
 
