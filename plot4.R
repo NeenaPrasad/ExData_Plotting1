@@ -28,8 +28,8 @@ Cairo(file="plot4.png",type="png",units="px",width=480,height=480,pointsize=12,b
 mfrow_old <- par("mfrow")
 margin <- par("mar")
 oma_old <- par("oma")
-fam <- par("family")
-## Setting mfrow to 2 by 2
+
+## Setting mfrow to 2 by 2, margin and outer margin
 
 par(mfrow = c(2,2), mar = c(4,4,2,1), oma =c(0,0,0,0))
 ## 4 Plots added to the graph 
@@ -53,7 +53,7 @@ with(power_4analysis, {
         
 })
 
-par(mfrow = mfrow_old, mar = margin,oma = oma_old, family = fam)
+par(mfrow = mfrow_old, mar = margin,oma = oma_old)
 
 ## Copying the plot to png file with height 480 pixels and width 480 pixels
 
