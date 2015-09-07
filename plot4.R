@@ -20,7 +20,7 @@ if (!("power_4analysis" %in% ls())){
 
 ## Setting the graphic device with appropriate pixel size
 
-Cairo(file="plot4.png",type="png",units="px",width=480,height=480,pointsize=12)
+Cairo(file="plot4.png",type="png",units="px",width=480,height=480,pointsize=12,bg="white")
 
 ## Requires a 2 by 2 array of graphs, storing the old mfrow value to 
 ## not affect the defaults
