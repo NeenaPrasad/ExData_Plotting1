@@ -53,6 +53,7 @@ with(power, {
         
 })
 
+## restoring the global arguments
 par(mfrow = mfrow_old, mar = margin,oma = oma_old)
 
 # removing temporary variables
