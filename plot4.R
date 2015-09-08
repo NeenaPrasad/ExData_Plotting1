@@ -55,8 +55,9 @@ with(power, {
 
 par(mfrow = mfrow_old, mar = margin,oma = oma_old)
 
+# removing temporary variables
 rm(margin,mfrow_old,oma_old)
-## Copying the plot to png file with height 480 pixels and width 480 pixels
 
+## Closing the connection
 dev.off()
 
