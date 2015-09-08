@@ -9,13 +9,13 @@ if(length(ls())==0) {
 ## If the environment does not contain the required power data, 
 ## load the data by using load-data.R
 
-if (!ls() == "power_4analysis"){
+if (!ls() == "power"){
         source("load-data.R")
 }
 
 ## Plotting the histogram Global active power 
 
-with(power_4analysis, hist(Global_active_power, col = "red",
+with(power, hist(Global_active_power, col = "red",
                            xlab = "Global Active Power (kilowatts)",
                            ylab = "Frequency", 
                            main = "Global Active Power"))

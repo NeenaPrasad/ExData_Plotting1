@@ -44,10 +44,36 @@ This script does the following:
 
 1. Checks if the dataset (**household_power_consumption.txt**) is present in the working directory
 2. Dataset zipfile is downloaded if it is not.
-3. Zipfile is unzipped and read into the R with read.table with appropriate arguments. Initially 5 rows are read into the R to determine the column classes and is then used to read the entire table to minimise the time taken.  
-4. The data for a two day period alone is required for the project,ie , for dates 2007-02-01 and 2007-02-02.
-5. A new variable Date_Time is created in the dataframe with class **POSIXct** by combining the Date and Time columns in data frame.
-6. Processed dataframe **power_4analysis** alone is retained and all the intermediary variables are deleted
+3. Zipfile is unzipped and read into the R with read.table with appropriate arguments. Initially 5 rows are read into the R to determine the column classes and is then used to read the data for a two day period alone is required for the project,ie , for dates 2007-02-01 and 2007-02-02.
+4. A new variable Date_Time is created in the dataframe with class **POSIXct** by combining the Date and Time columns in data frame.
+5. Processed dataframe **power** alone is retained and all the intermediary variables are deleted. It has 2880 rows and 10 columns.
+
+**Dataframe : Power**
+
+2880 observations for dates 2007-02-01 and 2007-02-02. 
+
+Variables:
+
+**Date**: Date in format dd/mm/yyyy
+
+**Time**: time in format hh:mm:ss
+
+**Global_active_power**: household global minute-averaged active power (in kilowatt)
+
+**Global_reactive_power**: household global minute-averaged reactive power (in kilowatt)
+
+**Voltage**: minute-averaged voltage (in volt)
+
+**Global_intensity**: household global minute-averaged current intensity (in ampere)
+
+**Sub_metering_1**: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
+
+**Sub_metering_2**: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
+
+**Sub_metering_3**: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
+
+**Date_Time** : in POSIXct format using the columns **Date** and **Time**.
+
 
 ####2. plot1.R
 
@@ -84,6 +110,8 @@ The script:
         2.3.  **Sub_metering_1**,**Sub_metering_2** and **Sub_metering_3** against __*Date_Time*__
         2.4.  **_Global_reactive_power_** against __*Date_Time*__.  
 3. Image is copied to PNG file plot4.png with dimension 480 pixels by 480 pixels, here the Cairo package was used for png rendering, since the dev.copy to output png was not rendering properly. 
+
+
 
 
 

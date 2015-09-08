@@ -14,7 +14,7 @@ if(length(ls())==0) {
 ## If the environment does not contain the required power data, 
 ## load the data by using load-data.R
 
-if (!("power_4analysis" %in% ls())){
+if (!("power" %in% ls())){
         source("load-data.R")
 }
 
@@ -38,7 +38,7 @@ par(mfrow = c(2,2), mar = c(4,4,2,1), oma =c(0,0,0,0))
 ## Plot 3 : Plotting the  Submeter 1,2,3 values against the POSIXct Date_Time variable
 ## Plot 4 : Plotting the  Global reactive power against the POSIXct Date_Time variable
 
-with(power_4analysis, {
+with(power, {
         plot(x = Date_Time, y = Global_active_power, 
              ylab = "Global Active Power (kilowatts)",xlab="", type = "l")
         plot(x = Date_Time, y = Voltage, 
@@ -55,6 +55,7 @@ with(power_4analysis, {
 
 par(mfrow = mfrow_old, mar = margin,oma = oma_old)
 
+rm(margin,mfrow_old,oma_old)
 ## Copying the plot to png file with height 480 pixels and width 480 pixels
 
 dev.off()

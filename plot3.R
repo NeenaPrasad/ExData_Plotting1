@@ -9,13 +9,13 @@ if(length(ls())==0) {
 ## If the environment does not contain the required power data, 
 ## load the data by using load-data.R
 
-if (!ls() == "power_4analysis"){
+if (!ls() == "power"){
         source("load-data.R")
 }
 
 ## Plotting the  Submeter 1,2,3 values against the POSIXct Date_Time variable
 
-with(power_4analysis, {
+with(power, {
         plot(x = Date_Time, y = Sub_metering_1, type = "l", ylab = "Energy sub metering")
         lines(x = Date_Time, y = Sub_metering_2, col= "red")
         lines(x = Date_Time, y = Sub_metering_3, col= "blue")

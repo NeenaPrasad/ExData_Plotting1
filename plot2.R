@@ -9,13 +9,13 @@ if(length(ls())==0) {
 ## If the environment does not contain the required power data, 
 ## load the data by using load-data.R
 
-if (!ls() == "power_4analysis"){
+if (!ls() == "power"){
         source("load-data.R")
 }
 
 ## Plotting the  Global active power against the POSIXct Date_Time variable
 
-with(power_4analysis, plot(x = Date_Time, y = Global_active_power,
+with(power, plot(x = Date_Time, y = Global_active_power,
                            ylab = "Global Active Power (kilowatts)",
                            type = "l"))
 

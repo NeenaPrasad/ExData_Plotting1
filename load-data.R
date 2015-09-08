@@ -21,31 +21,24 @@ if (!file.exists("household_power_consumption.txt")){
 dframe <- read.table(file = "household_power_consumption.txt", nrows = 5,
                      sep=";",header = TRUE,na.strings = "?")
 
+## Column names are stored to be used later
+colName_df <- names(dframe)
+
 ## class of each data is stored in colClasses_df to read the whole table
 colClasses_df = sapply(dframe,class)
 
+## reading the power data only for dates 2007-02-01 and 2007-02-02
+power <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption.txt"),sep=";",
+                       header = FALSE, na.strings = "?", colClasses = colClasses_df)
 
-## reading the power data
-power <- read.table(file = "household_power_consumption.txt", sep=";",
-                    header = TRUE, na.strings = "?", colClasses = colClasses_df)
-
-
-## checking for rows with dates "2007-02-01" and "2007-02-02" to subset the data
-
-sub <- (dmy(power$Date) == ymd("2007-02-01")) | (dmy(power$Date) == ymd("2007-02-02"))
-
-power_4analysis <- subset(power, sub)
-
-## Converting Date column from factor to "POSIXct" "POSIXt"
-
-power_4analysis$Date <- dmy(power_4analysis$Date)
+## Appropriately name the column names
+names(power) <- colName_df
+power$Date <- dmy(power$Date)
 
 #Creating Date_Time column
 
-power_4analysis$Date_Time <- as.POSIXct(paste(as.Date(power_4analysis$Date), 
-                                              power_4analysis$Time))
-
-
+power$Date_Time <- as.POSIXct(paste(as.Date(power$Date), 
+                                              power$Time))
 # removing intermediate variables
 
-rm(dframe,power,sub,colClasses_df)
+rm(dframe,colName_df,colClasses_df)
