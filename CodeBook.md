@@ -72,7 +72,7 @@ Variables:
 
 **Sub_metering_3**: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
 
-**Date_Time** : in POSIXct format using the columns **Date** and **Time**.
+**Date_Time** : in "POSIXct" "POSIXt" format using the columns **Date** and **Time**.
 
 
 ####2. plot1.R
