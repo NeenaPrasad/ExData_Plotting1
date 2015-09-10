@@ -9,7 +9,7 @@ if(length(ls())==0) {
 ## If the environment does not contain the required power data, 
 ## load the data by using load-data.R
 
-if (!ls() == "power"){
+if (!("power" %in% ls())){
         source("load-data.R")
 }
 

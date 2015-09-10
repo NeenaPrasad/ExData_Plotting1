@@ -1,4 +1,6 @@
 ## Loading Cairo package for better png output
+## dev.copy() was not rendering legends properly
+
 if (!("Cairo" %in% installed.packages())) install.packages("Cairo")
 
 library(Cairo)
