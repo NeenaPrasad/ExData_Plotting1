@@ -31,10 +31,10 @@ colName_df <- names(dframe)
 colClasses_df = sapply(dframe,class)
 
 ## reading the power data only for dates 2007-02-01 and 2007-02-02
-power <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption.txt"),
+power <- read.table(pipe('grep "^[1-2]/2/2007" "household_power_consumption.txt"'),
                     sep=";", header = FALSE, na.strings = "?", colClasses = colClasses_df)
 
-## Appropriately name the column names and change the Date column values to POSIXct format
+# Appropriately name the column names and change the Date column values to POSIXct format
 names(power) <- colName_df
 
 power$Date <- dmy(power$Date)
