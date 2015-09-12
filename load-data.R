@@ -15,6 +15,9 @@ if (!file.exists("household_power_consumption.txt")){
         
         download.file(url, destfile = "data.zip")
         unzip("data.zip") 
+        
+        ## removing unwanted variables
+        rm(url)
 }
 
 ## reading the first 5 rows using read.table

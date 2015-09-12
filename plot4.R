@@ -1,11 +1,3 @@
-## Loading Cairo package for better png output
-## dev.copy() was not rendering legends properly
-
-if (!("Cairo" %in% installed.packages())) install.packages("Cairo")
-
-library(Cairo)
-
-## Assuming the working directory has the load-data.R file
 
 ## Load the data in the event that the environment is empty
 
@@ -22,8 +14,7 @@ if (!("power" %in% ls())){
 
 ## Setting the graphic device with appropriate pixel size
 
-Cairo(file="plot4.png",type="png",units="px",width=480,height=480,pointsize=12,bg="white")
-
+png("plot4.png", height = 480,width = 480)
 ## Requires a 2 by 2 array of graphs, storing the old mfrow value to 
 ## not affect the defaults
 
